@@ -19,6 +19,9 @@ import UnAuthorized from './component/Default/UnAuthorized'
 import UserProfile from './component/User/UserProfile'
 import AdminProfile from './component/Admin/AdminProfile'
 import DoctorProfile from './component/Doctor/DoctorProfile'
+import Slots from './component/Doctor/slots/Slots'
+import AddSlot from './component/Doctor/slots/AddSlot'
+import UpdateSlot from './component/Doctor/slots/UpdateSlot'
 
 function App() {
   const context = useContext(AuthContext)
@@ -57,6 +60,9 @@ function App() {
               isDoctor && token ? (
                 <React.Fragment>
                   <Route path={'/doctor/dashboard'} element={<DoctorDashboard />} />
+                  <Route path={'/doctor/slots'} element={<Slots />} />
+                  <Route path={'/doctor/slots/add'} element={<AddSlot />} />
+                  <Route path={'/doctor/slots/edit/:id'} element={<UpdateSlot />} />
                   <Route path={'/doctor/profile'} element={<DoctorProfile />} />
                 </React.Fragment>
               ) : null
