@@ -22,6 +22,9 @@ import DoctorProfile from './component/Doctor/DoctorProfile'
 import Slots from './component/Doctor/slots/Slots'
 import AddSlot from './component/Doctor/slots/AddSlot'
 import UpdateSlot from './component/Doctor/slots/UpdateSlot'
+import ServiceList from './component/Doctor/service/ServiceList'
+import AddService from './component/Doctor/service/AddService'
+import UpdateService from './component/Doctor/service/UpdateService'
 
 function App() {
   const context = useContext(AuthContext)
@@ -63,6 +66,9 @@ function App() {
                   <Route path={'/doctor/slots'} element={<Slots />} />
                   <Route path={'/doctor/slots/add'} element={<AddSlot />} />
                   <Route path={'/doctor/slots/edit/:id'} element={<UpdateSlot />} />
+                  <Route path={'/doctor/service'} element={<ServiceList />} />
+                  <Route path={'/doctor/service/add'} element={<AddService />} />
+                  <Route path={'/doctor/service/edit/:id'} element={<UpdateService />} />
                   <Route path={'/doctor/profile'} element={<DoctorProfile />} />
                 </React.Fragment>
               ) : null
